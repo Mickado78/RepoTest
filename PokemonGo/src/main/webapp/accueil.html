@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page d'accueil</title>
+
+<!-- Librairies bootStrap -->
+<script type="text/javascript"
+	src="static/librairies/bootstrap/js/jquery-3.2.1.js"></script>
+<script type="text/javascript"
+	src="static/librairies/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript"
+	src="static/librairies/bootstrap/js/navbar.js"></script>
+<link href="static/librairies/bootstrap/css/bootstrap.css"
+	rel="stylesheet" type="text/css" />
+<link href="static/librairies/bootstrap/css/navbar.css" rel="stylesheet"
+	type="text/css" />
+
+<!-- Librairies AngularJS -->
+<script type="text/javascript"
+	src="static/librairies/angular/angular.js"></script>
+<script type="text/javascript"
+	src="static/librairies/angular/angular-route.js"></script>
+
+<!-- Ajout des scripts angularJS -->
+<script type="text/javascript" src="static/js/modules/app.js"></script>
+<script type="text/javascript" src="static/js/routing/routage.js"></script>
+<script type="text/javascript" src="static/js/services/services.js"></script>
+<script type="text/javascript"
+	src="static/js/controllers/controllers.js"></script>
+<script type="text/javascript" src="static/js/routing/routagePokemon.js"></script>
+<script type="text/javascript"
+	src="static/js/services/servicePokemon.js"></script>
+<script type="text/javascript"
+	src="static/js/controllers/controllerPokemon.js"></script>
+
+</head>
+
+<body ng-app="app">
+
+	<!-- 	<div id="wrapper" class="active"> -->
+	<!-- 		<!-- Sidebar -->
+	
+	<!-- 		<div id="sidebar-wrapper"> -->
+	<!-- 			<ul id="sidebar_menu" class="sidebar-nav"> -->
+	<!-- 				<li class="sidebar-brand"><a id="menu-toggle" -->
+	<!-- 					href="accueil.html">Accueil</a></li> -->
+	<!-- 			</ul> -->
+	<!-- 			<ul class="sidebar-nav" id="sidebar"> -->
+	<!-- 				<li><a href="#!findListe">Liste des joueurs</a></li> -->
+	<!-- 				<li><a href="#!add">Ajouter un joueur</a></li> -->
+	<!-- 				<li><a href="#!del">Supprimer un joueur</a></li> -->
+	<!-- 				<li><a href="#!update">Modifier un joueur</a></li> -->
+	<!-- 				<li><a href="#!findByUserName">Rechercher un joueur</a></li> -->
+	<!-- 				<li>.</li> -->
+	<!-- 				<li><input type="text" ng-model="recherche"></li> -->
+	<!-- 			</ul> -->
+
+	<!-- 		</div> -->
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="accueil.html">Accueil</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="#!findListe">Liste des joueurs</a></li>
+				<li><a href="#!add">Ajouter un joueur</a></li>
+				<li><a href="#!del">Supprimer un joueur</a></li>
+				<li><a href="#!update">Modifier un joueur</a></li>
+				<li><a href="#!findByUserName">Rechercher un joueur</a></li>
+				<li>.</li>
+				
+				<form class="navbar-form navbar-left"><input type="text"  class="form-control" ng-model="recherche"></form>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Page content -->
+	<!-- 		<div id="page-content-wrapper"> -->
+	<!-- Keep all page content within the page-content inset div! -->
+	<!-- 			<div class="page-content inset"> -->
+
+	<div ng-view></div>
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+</body>
+</html>
+</html>

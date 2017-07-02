@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle"; style="margin:auto; width: 100%; margin-top:50px">
+   
+<table class="table table-bordered" style="background-color:rgba(100, 100, 100, 0.5); color:white">
+<tr>
+<th style="text-align: center">Pokedex</th>
+<th style="text-align: center">Nom</th>
+<th style="text-align: center">Image</th>
+<th style="text-align: center">Etat</th>
+
+</tr>
+<tr ng-repeat="pokemon in listePokemonManquants | filter:recherche" style="text-align: center">
+<td style="width: 32px">{{pokemon.numeroPokedex}}</td>
+<td style="width: 100px">{{pokemon.nom}}</td>
+<td style="width: 50px"><img src="{{pokemon.image}}" width="30" height="30"></td>
+<td>Etat</td>
+
+
+</tr>
+</table>
+</div></div>
+					

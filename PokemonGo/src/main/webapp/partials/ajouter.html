@@ -1,0 +1,40 @@
+<form class="form-horizontal" style="width: 40%; margin-left: 750px">
+	<div style="padding-top: 200px">
+		<div class="form-group">
+			<label for="idNom">Nom</label>
+			<div>
+				<input type="text" id="idNom" ng-model="joueurForm.nom">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="idPrenom">Prenom</label>
+			<div>
+				<input type="text" id="idPrenom" ng-model="joueurForm.prenom">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="idUN">UserName</label>
+			<div>
+				<input type="text" id="idUN" ng-model="joueurForm.userName">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="idMdp">Mdp</label>
+			<div>
+				<input type="text" id="idMdp" ng-model="joueurForm.mdp">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+		<div>
+			<button class="btn btn-success" ng-click="ajouter()">Ajouter</button>
+			<button type="reset" class="btn btn-danger">Reset</button>
+		</div>
+	</div>
+	</div>
+</form>
