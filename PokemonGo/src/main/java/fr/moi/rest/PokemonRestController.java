@@ -10,34 +10,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.moi.model.PokemonManquants;
-import fr.moi.services.IPokemonManquantsService;
+import fr.moi.model.Pokemon;
+import fr.moi.services.IPokemonService;
 
 @RestController
-@RequestMapping(value="/pokemonManquants")
-public class PokemonManquantsRestController {
+@RequestMapping(value="/pokemon")
+public class PokemonRestController {
 
 	@Autowired
-	private IPokemonManquantsService pmService;
+	private IPokemonService pService;
 	
 	@RequestMapping(value="/create",method=RequestMethod.POST, produces="application/json",consumes="application/json")
-	public PokemonManquants addPokemon(@RequestBody PokemonManquants pm){
-		return pmService.ajouterPokemon(pm);
+	public Pokemon addPokemon(@RequestBody Pokemon p){
+		return pService.ajouterPokemon(p);
 	}
 	
 	@RequestMapping(value="/liste",method=RequestMethod.GET, produces="application/json")
-	public List<PokemonManquants> getAllPokemonsByJoueur(@RequestParam("jId") int id){
-		return pmService.getAllPokemonByJoueur(id);
+	public List<Pokemon> getAllPokemonsByJoueur(@RequestParam("jId") int id){
+		return pService.getAllPokemonByJoueur(id);
 	}
 	
 	@RequestMapping(value="/update",method=RequestMethod.PUT, produces="application/json",consumes="application/json")
-	public PokemonManquants updatePokemon(@RequestBody PokemonManquants pm){
-		return pmService.modifierPokemon(pm);
+	public Pokemon updatePokemon(@RequestBody Pokemon p){
+		return pService.modifierPokemon(p);
 	}
 	
 	@RequestMapping(value="/delete/{pId}", method=RequestMethod.DELETE, produces="application/json")
 	public void deletePokemon(@PathVariable("pId") int id){
-		pmService.supprimerPokemon(id);
+		pService.supprimerPokemon(id);
 	}
 	
 }

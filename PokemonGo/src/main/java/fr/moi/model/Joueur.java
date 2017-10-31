@@ -31,26 +31,10 @@ public class Joueur implements Serializable{
 	private String userName;
 	private String mdp;
 	
-	@OneToMany(mappedBy="joueur", fetch=FetchType.EAGER)
-	@Fetch(value = FetchMode.SUBSELECT)
-	private List<PokemonPokedex> listePokemonPokedex;
-	
 	@OneToMany(mappedBy="joueur", fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	@Fetch(value = FetchMode.SUBSELECT)
-	private List<PokemonManquants> listePokemonManquants;
-	
-	@OneToMany(mappedBy="joueur", fetch=FetchType.EAGER)
-	@Fetch(value = FetchMode.SUBSELECT)
-	private List<PokemonPossedes> listePokemonPossedes;
-	
-	@OneToMany(mappedBy="joueur", fetch=FetchType.EAGER)
-	@Fetch(value = FetchMode.SUBSELECT)
-	private List<PokemonBesoins> listePokemonBesoins;
-	
-	@OneToMany(mappedBy="joueur", fetch=FetchType.EAGER)
-	@Fetch(value = FetchMode.SUBSELECT)
-	private List<PokemonAEvoluer> listePokemonAEvoluer;
-	
+	private List<Pokemon> listePokemon;
+		
 	public Joueur() {
 		super();
 	}
@@ -113,38 +97,15 @@ public class Joueur implements Serializable{
 	}
 
 
-	public List<PokemonManquants> getListePokemonManquants() {
-		return listePokemonManquants;
+	public List<Pokemon> getListePokemon() {
+		return listePokemon;
 	}
 
-	public void setListePokemonManquants(List<PokemonManquants> listePokemonManquants) {
-		this.listePokemonManquants = listePokemonManquants;
+	public void setListePokemon(List<Pokemon> listePokemon) {
+		this.listePokemon = listePokemon;
 	}
 
-	public List<PokemonPossedes> getListePokemonPossedes() {
-		return listePokemonPossedes;
-	}
-
-	public void setListePokemonPossedes(List<PokemonPossedes> listePokemonPossedes) {
-		this.listePokemonPossedes = listePokemonPossedes;
-	}
-
-	public List<PokemonBesoins> getListePokemonBesoins() {
-		return listePokemonBesoins;
-	}
-
-	public void setListePokemonBesoins(List<PokemonBesoins> listePokemonBesoins) {
-		this.listePokemonBesoins = listePokemonBesoins;
-	}
-
-	public List<PokemonAEvoluer> getListePokemonAEvoluer() {
-		return listePokemonAEvoluer;
-	}
-
-	public void setListePokemonAEvoluer(List<PokemonAEvoluer> listePokemonAEvoluer) {
-		this.listePokemonAEvoluer = listePokemonAEvoluer;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", userName=" + userName + ", mdp=" + mdp

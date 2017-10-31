@@ -4,10 +4,10 @@ app.factory('pokemonProvider',function($http){
 	
 	var restPokemonUrl="http://localhost:8181/PokemonGo/spring/pokemon";
 	
-	function findAllPokemonManquants(id, callBack){
+	function findAllPokemon(id, callBack){
 		$http({
 			method:'GET',
-			url:restPokemonUrl+'Manquants/liste?jId='+id
+			url:restPokemonUrl+'/liste?jId='+id
 		}).then(function successCallBack(response){
 			console.log(response.data);
 			callBack(response.data);
@@ -63,7 +63,7 @@ app.factory('pokemonProvider',function($http){
 	
 	
 	return {
-		getListePokemonManquants:findAllPokemonManquants,
+		getListePokemon:findAllPokemon,
 		addPokemon:ajoutPokemon,
 		deletePokemon:supprimerPokemon,
 		updatePokemon:modifPokemon

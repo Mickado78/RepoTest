@@ -6,16 +6,21 @@
 <th style="text-align: center">Pokedex</th>
 <th style="text-align: center">Nom</th>
 <th style="text-align: center">Image</th>
-<th style="text-align: center">Etat</th>
-
+<th style="text-align: center">Nombre de bonbons</th>
+<th style="text-align: center">Evolution</th>
+<th style="text-align: center">Nombre d'evolutions</th>
+<th style="text-align: center">IV besoin</th>
+<th style="text-align: center">IV Max</th>
 </tr>
-<tr ng-repeat="pokemon in listePokemonManquants | filter:recherche" style="text-align: center">
+<tr ng-repeat="pokemon in listePokemon | filter:recherche" style="text-align: center">
 <td style="width: 32px">{{pokemon.numeroPokedex}}</td>
 <td style="width: 100px">{{pokemon.nom}}</td>
 <td style="width: 50px"><img src="{{pokemon.image}}" width="30" height="30"></td>
-<td>Etat</td>
-
-
+<td>{{pokemon.nombreBonbons}}</td>
+<td>{{pokemon.nombreBonbons4EV}}</td>
+<td>{{pokemon.nombreEV}}</td>
+<td>{{pokemon.iVbesoin}}</td>
+<td>{{pokemon.iVmax}}</td>
 </tr>
 </table>
 </div></div>

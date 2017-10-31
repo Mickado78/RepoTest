@@ -24,10 +24,10 @@ public class JoueurDaoImpl implements IJoueurDao {
 	public Joueur ajouterJoueur(Joueur j) {
 		Session s=sf.getCurrentSession();
 		s.save(j);
-		String req1="INSERT INTO pokemonmanquants (image, nom, numeroPokedex, joueur_id) SELECT image, nom, numeroPokedex, joueur_id FROM pokedex";
+		String req1="INSERT INTO pokemon (image, nom, numeroPokedex, joueur_id, etatCapture, etatEV, etatIV, iVbesoin, iVmax, nombreBonbons, nombreBonbons4EV, nombreEV) SELECT image, nom, numeroPokedex, joueur_id, etatCapture, etatEV, etatIV, iVbesoin, iVmax, nombreBonbons, nombreBonbons4EV, nombreEV FROM pokedex";
 		Query query=s.createSQLQuery(req1);
 		query.executeUpdate();
-		String req2="UPDATE from PokemonManquants as pm set pm.joueur.id=:pJid where pm.joueur.id=:pId";
+		String req2="UPDATE from Pokemon as p set p.joueur.id=:pJid where p.joueur.id=:pId";
 		Query query2=s.createQuery(req2);
 		query2.setParameter("pJid", j.getId());
 		query2.setParameter("pId", 1);

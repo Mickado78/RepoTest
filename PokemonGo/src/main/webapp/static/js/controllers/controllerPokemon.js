@@ -3,17 +3,17 @@ app
 .controller("findAllPokemonCtrl",function($scope,pokemonProvider,$rootScope,$location){
 		id=$rootScope.joueurId;
 		console.log(id);
-		pokemonProvider.getListePokemonManquants(id,function(callBack){
-		$scope.listePokemonManquants=callBack;
-		console.log($scope.listePokemonManquants);
+		pokemonProvider.getListePokemon(id,function(callBack){
+		$scope.listePokemon=callBack;
+		console.log($scope.listePokemon);
 	});
 	
 	$scope.deleteLien=function(id){
 		pokemonProvider.deletePokemon(id,function(callBack){
 			
 			if(callBack!=undefined && callBack!=''){
-				pokemonProvider.getListePokemons(function(callBack){
-					$scope.listePokemons=callBack;
+				pokemonProvider.getListePokemon(function(callBack){
+					$scope.listePokemon=callBack;
 				});
 			}
 		});
