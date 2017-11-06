@@ -1,7 +1,9 @@
 body{
 	background-image: url("thumb-1920-724664.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 94.6%;
+	background-attachment: fixed;
+	background-position: left bottom;
 }
 
 .row{

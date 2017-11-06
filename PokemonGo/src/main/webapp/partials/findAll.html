@@ -1,22 +1,29 @@
 <div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle"; style="margin:auto; width: 100%; margin-top:50px">
-    <h1 style="text-align: center; color: black; font-weight: bold;">Liste des joueurs</h1><br/>
-<table class="table table-bordered" style="background-color:rgba(100, 100, 100, 0.5); color:white">
-<tr>
-<th style="text-align: center">ID</th>
-<th style="text-align: center">Nom</th>
-<th style="text-align: center">Prenom</th>
-<th style="text-align: center">Nom d'utilisateur</th>
-<th style="text-align: center">Operation</th>
-<th style="text-align: center">Liste Pokemon</th>
-</tr>
-<tr ng-repeat="joueur in listeJoueurs | filter:recherche" style="text-align: center">
-<td>{{joueur.id}}</td>
-<td>{{joueur.nom}}</td>
-<td>{{joueur.prenom}}</td>
-<td>{{joueur.userName}}</td>
-<td><a class='btn btn-info btn-xs' ng-click="modifLien(joueur)">Modifier</a> | <a class="btn btn-danger btn-xs" ng-click="deleteLien(joueur.id)">Supprimer</a></td>
-<td><a class='btn btn-success btn-xs' ng-click="affichLien(joueur.id)">Afficher la liste des Pokemon</a></td>
-</tr>
-</table>
-</div></div>
+	<div class="row col-md-6 col-md-offset-2 custyle"; style="margin: auto; width: 100%; margin-top: 50px; height: 500px;">
+		<h1 style="text-align: center; color: black; font-weight: bold;">Liste des joueurs</h1>
+		<br/>
+		<div style="height:510px; overflow: auto;">
+			<table class="table table-bordered"	style="background-color: rgba(100, 100, 100, 0.5); color: white;" >
+				<tr>
+					<th style="text-align: center">ID</th>
+					<th style="text-align: center">Nom</th>
+					<th style="text-align: center">Prenom</th>
+					<th style="text-align: center">Nom d'utilisateur</th>
+					<th style="text-align: center">Operation</th>
+					<th style="text-align: center">Liste Pokemon</th>
+				</tr>
+				<tr ng-repeat="joueur in listeJoueurs | filter:recherche" style="text-align: center">
+					<td>{{joueur.id}}</td>
+					<td>{{joueur.nom}}</td>
+					<td>{{joueur.prenom}}</td>
+					<td>{{joueur.userName}}</td>
+					<td><a class='btn btn-info btn-xs'
+						ng-click="modifLien(joueur)">Modifier</a> | <a
+						class="btn btn-danger btn-xs" ng-click="deleteLien(joueur.id)">Supprimer</a></td>
+					<td><a class='btn btn-success btn-xs'
+						ng-click="affichLien(joueur.id)">Afficher la liste des Pokemon</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
